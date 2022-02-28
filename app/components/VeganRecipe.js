@@ -2,6 +2,7 @@ import 'regenerator-runtime/runtime'
 import Loading from './Loading'
 import Tooltip from './Tooltip'
 import React, { useEffect, useState } from 'react'
+import Recipe from './Recipe'
 
 
 
