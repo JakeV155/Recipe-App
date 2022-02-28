@@ -99,7 +99,7 @@ const getSearch = e => {
       {loading ? getVeganRecipes : <Loading/>}
       <div className="grid space-around">
       {recipes.map(getRecipe => (
-        <VeganCards
+        <Recipe
         query={query}
         title={getRecipe.recipe.label}
         image={getRecipe.recipe.images.SMALL.url}
