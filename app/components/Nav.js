@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { ThemeConsumer } from '../contexts/theme'
 import { NavLink } from 'react-router-dom'
+import Navbar from './Navbar';
+
 
 
 const activeStyle = {
@@ -18,7 +20,7 @@ export default function Nav () {
                 to='/'
                 exact
                 activeStyle={activeStyle}
-                className='nav-link'>
+                className='nav-link navButton'>
                   Traditional 🍗 {'\u00A0'}{'\u00A0'}{'\u00A0'}
               </NavLink>
             </li>
@@ -26,14 +28,14 @@ export default function Nav () {
               <NavLink
                 to='/VeganRecipe'
                 activeStyle={activeStyle}
-                className='nav-link'>
+                className='nav-link navButton'>
                   Vegan 🌿
               </NavLink>
             </li>
           </ul>
           <button
-            style={{fontSize: 30}}
-            className='btn-clear'
+            style={{fontSize: 40}}
+            className='btn-clear flashlight'
             onClick={toggleTheme}
           >
             {theme === 'light' ? '🔦' : '💡'}
