@@ -3,6 +3,8 @@ import Loading from './Loading'
 import Tooltip from './Tooltip'
 import React, { useEffect, useState } from 'react'
 import Recipe from './Recipe'
+import ScrollToTop from './ScrollToTop'
+
 
 
 
@@ -77,16 +79,16 @@ const getSearch = e => {
 
   return (
     <div className="App">
-      <h1 className='flex-center marginAdjust'>
+      <h1 className='flex-center marginAdjust mainHeader'>
         <Tooltip text='Vegan ramen?!'>
-        <div className='btn-clear' onClick={getVeganRamen}>🍜{'\u00A0'}{'\u00A0'}</div>
+        <div className='btn-clear emoji' onClick={getVeganRamen}>🍜{'\u00A0'}{'\u00A0'}</div>
         </Tooltip>    
         <Tooltip text='Vegan sandwiches?!'>
-        <div className='btn-clear' onClick={getVeganSandwich}>🥪{'\u00A0'}{'\u00A0'}</div>
-        </Tooltip>Search Vegan Recipes<Tooltip text='Vegan burgers?!'><div className='btn-clear' 
+        <div className='btn-clear emoji' onClick={getVeganSandwich}>🥪{'\u00A0'}{'\u00A0'}</div>
+        </Tooltip>Search Vegan Recipes<Tooltip text='Vegan burgers?!'><div className='btn-clear emoji' 
         onClick={getVeganBurger}>{'\u00A0'}{'\u00A0'}🍔</div></Tooltip>
         <Tooltip text='Vegan pizza?!'>
-        <div className='btn-clear' onClick={getVeganPizza}>{'\u00A0'}{'\u00A0'}🍕</div>
+        <div className='btn-clear emoji' onClick={getVeganPizza}>{'\u00A0'}{'\u00A0'}🍕</div>
         </Tooltip>
       </h1>
       <h6 className='flex-center'>*Results are randomized*</h6>
@@ -106,11 +108,12 @@ const getSearch = e => {
         image={getRecipe.recipe.images.SMALL.url}
         region={getRecipe.recipe.cuisineType}
         type={getRecipe.recipe.mealType}
-        key={getRecipe.recipe.uri}
+        key={getRecipe.recipe.label}
         ingredients={getRecipe.recipe.ingredients}
         readMore={getRecipe.recipe.url}
         />
       ))}
+      <ScrollToTop/>
       </div>
     </div>
   );
