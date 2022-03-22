@@ -1,5 +1,5 @@
 {
-  "name": "github-battle",
+  "name": "recipe-selector",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -30,6 +30,7 @@
     "prop-types": "^15.8.1",
     "query-string": "^7.1.1",
     "react": "^17.0.2",
+    "react-bootstrap": "^2.2.1",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
     "react-router-dom": "^5.2.0",
