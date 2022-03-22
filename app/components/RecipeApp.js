@@ -3,6 +3,7 @@ import Loading from './Loading'
 import Tooltip from './Tooltip'
 import Recipe from './Recipe';
 import React, { useEffect, useState } from 'react'
+import ScrollToTop from './ScrollToTop';
 
 
 
@@ -35,14 +36,12 @@ const getRecipes = async () => {
   const data = await response.json();
   setLoading(true)
   setRecipes(data.hits);
-  console.log(data.hits)
 };
 
 const getBurger = async () => {
   const response = await fetch(burger);
   const data = await response.json();
   setRecipes(data.hits);
-  console.log(data.hits)
 };
 
 const getSandwich = async () => {
@@ -77,16 +76,16 @@ const getSearch = e => {
 
   return (
     <div className="App">
-      <h1 className='flex-center marginAdjust'>
+      <h1 className='flex-center marginAdjust mainHeader'>
         <Tooltip text='Click me for ramen'>
-        <div className='btn-clear' onClick={getRamen}>🍜{'\u00A0'}{'\u00A0'}</div>
+        <div className='btn-clear emoji' onClick={getRamen}>🍜{'\u00A0'}{'\u00A0'}</div>
         </Tooltip>        
         <Tooltip text='Click me for sandwiches'>
-        <div className='btn-clear' onClick={getSandwich}>🥪{'\u00A0'}{'\u00A0'}</div>
-        </Tooltip>Search A Recipe If You Dare<Tooltip text='Click me for burgers'><div className='btn-clear' 
+        <div className='btn-clear emoji' onClick={getSandwich}>🥪{'\u00A0'}{'\u00A0'}</div>
+        </Tooltip>Search A Recipe If You Dare<Tooltip text='Click me for burgers'><div className='btn-clear emoji' 
         onClick={getBurger}>{'\u00A0'}{'\u00A0'}🍔</div></Tooltip>
         <Tooltip text='Click me for pizza'>
-        <div className='btn-clear' onClick={getPizza}>{'\u00A0'}{'\u00A0'}🍕</div>
+        <div className='btn-clear emoji' onClick={getPizza}>{'\u00A0'}{'\u00A0'}🍕</div>
         </Tooltip>  
       </h1>
       <h6 className='flex-center'>*Results are randomized*</h6>
@@ -106,11 +105,12 @@ const getSearch = e => {
         image={getRecipe.recipe.images.SMALL.url}
         region={getRecipe.recipe.cuisineType}
         type={getRecipe.recipe.mealType}
-        key={getRecipe.recipe.uri}
+        key={getRecipe.recipe.label}
         ingredients={getRecipe.recipe.ingredients}
         readMore={getRecipe.recipe.url}
         />
       ))}
+      <ScrollToTop/>
       </div>
     </div>
   );
