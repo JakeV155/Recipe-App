@@ -20,12 +20,13 @@ html, body, #app {
     max-width: 1200px;
     margin: 0 auto;
     padding: 50px;
+    padding-top: 0px;
   }
   
   .dark {
     color: #DADADA;
     background: #1c2022;
-    min-height: 100%;
+    /* min-height: 100%; */
   }
   
   .flex-center {
@@ -301,6 +302,7 @@ html, body, #app {
   }
 .marginAdjust { 
     margin-bottom: 0;
+    margin-top: 10px;
 }
 
 h6 {
@@ -313,4 +315,58 @@ form {
 
 .searchButton {
   margin-left: 5px;
+}
+
+.top:hover{
+ filter: invert(65%);
+}
+
+ul.row.nav { 
+  padding-left: 20px;
+ }
+
+.flashlight {
+  padding-right: 20px;
+}
+
+/* .navbar {
+  display: none;
+} */
+
+
+
+/* Mobile Styling */
+@media screen and (min-width: 320px){
+  .mainHeader { font-size: 1.5em;
+                text-align: center;   
+  }
+  .emoji { font-size: 1.2em;}
+  .flashlight { font-size: 35px !important }
+  .navButton { font-size: 1.5em;}
+  .searchBar { font-size: 1em;}
+  h6 { font-size: 1em;}
+  ul.row.nav { display: block; }
+  .navbar {
+    
+    height: 80px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+  .menu-bars {
+    margin: 1em;
+    font-size: 1.5em;
+    background: none;
+  }
+}
+
+@media screen and (min-width: 600px){
+  .mainHeader { font-size: 2.8em;
+                text-align: center;   
+  }
+  .flashlight { font-size: 40px !important }
+  .navButton { font-size: 2em;}
+  .searchBar { font-size: 2em;}
+  ul.row.nav { display: flex; }
+  .navbarAll { display: none;}
 }
